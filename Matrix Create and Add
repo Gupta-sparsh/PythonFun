@@ -1,0 +1,32 @@
+import random as rd
+def matrixMaker(m,n):
+    outer = []
+    inner = []
+    for i in range(m):
+        for j in range(n):
+            inner.append(rd.randint(1,10))
+        outer.append(inner)
+        inner = []
+    return outer
+def matrixAdd(a,b):
+    outer = []
+    inner = []
+    rows = len(a)
+    coloumn = len(a[0])
+    for i in range(rows):
+        for j in range(coloumn):
+            x = a[i][j] + b[i][j]
+            inner.append(x)
+        outer.append(inner)
+        inner = []
+    
+    return outer
+        
+
+k = matrixMaker(2,2)
+j = matrixMaker(2,2)
+l = matrixAdd(k,j)
+print(k)
+print(j)
+print(l)
+
