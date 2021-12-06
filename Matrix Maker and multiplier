@@ -1,0 +1,32 @@
+import random as rd
+def matrixMaker(m,n):
+    outer = []
+    inner = []
+    for i in range(m):
+        for j in range(n):
+            inner.append(rd.randint(1,10))
+        outer.append(inner)
+        inner = []
+    return outer
+def multiply(x,y):
+    outer = []
+    inner = []
+    dim = len(x)
+    summition = 0
+    for i in range(dim):
+        for j in range(dim):
+            for k in range(dim):
+                summition = summition + x[i][k]*y[k][j]
+            inner.append(summition)
+            summition = 0
+        outer.append(inner)
+        inner = []
+    return outer
+    
+k = matrixMaker(2,2)
+j = matrixMaker(2,2)
+print(k)
+print(j)
+    
+print(multiply(k,j))
+
